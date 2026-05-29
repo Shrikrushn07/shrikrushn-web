@@ -19,7 +19,7 @@ const TECH_ICONS = [
         name: "React",
         symbol: "⚛",
         color: "#61DAFB",
-        orbitR: 140,
+        orbitR: 165,
         dur: 24,
         startDeg: 10,
         clockwise: true,
@@ -28,7 +28,7 @@ const TECH_ICONS = [
         name: "Node.js",
         symbol: "N",
         color: "#6DA55F",
-        orbitR: 164,
+        orbitR: 194,
         dur: 32,
         startDeg: 78,
         clockwise: false,
@@ -37,7 +37,7 @@ const TECH_ICONS = [
         name: "Python",
         symbol: "Py",
         color: "#4B8BBE",
-        orbitR: 126,
+        orbitR: 149,
         dur: 28,
         startDeg: 152,
         clockwise: true,
@@ -46,7 +46,7 @@ const TECH_ICONS = [
         name: "PostgreSQL",
         symbol: "PG",
         color: "#5294C8",
-        orbitR: 156,
+        orbitR: 184,
         dur: 36,
         startDeg: 228,
         clockwise: false,
@@ -55,7 +55,7 @@ const TECH_ICONS = [
         name: "OpenAI",
         symbol: "✦",
         color: "#ffffff",
-        orbitR: 144,
+        orbitR: 170,
         dur: 20,
         startDeg: 298,
         clockwise: true,
@@ -100,17 +100,17 @@ export const RedOrb = () => {
     return (
         <div
             ref={containerRef}
-            className="relative flex items-center justify-center w-full h-full min-h-[420px] select-none"
+            className="relative flex items-center justify-center w-full h-full min-h-[500px] select-none"
             onMouseMove={onMouseMove}
             onMouseLeave={onMouseLeave}
         >
             {/* ── Layered ambient glow ─────────────────────────────────────── */}
             {/* Outer diffuse bloom */}
-            <div className="pointer-events-none absolute w-[340px] h-[340px] rounded-full bg-brand-red/6 blur-[100px]" />
+            <div className="pointer-events-none absolute w-[400px] h-[400px] rounded-full bg-brand-red/6 blur-[110px]" />
             {/* Mid glow */}
-            <div className="pointer-events-none absolute w-56 h-56 rounded-full bg-brand-red/10 blur-[60px]" />
+            <div className="pointer-events-none absolute w-[264px] h-[264px] rounded-full bg-brand-red/10 blur-[68px]" />
             {/* Inner warm halo */}
-            <div className="pointer-events-none absolute w-32 h-32 rounded-full bg-brand-red/20 blur-[30px]" />
+            <div className="pointer-events-none absolute w-[151px] h-[151px] rounded-full bg-brand-red/20 blur-[35px]" />
 
             {/* ── Parallax wrapper — everything inside shifts with mouse ── */}
             <motion.div
@@ -209,8 +209,8 @@ export const RedOrb = () => {
                 <div
                     className="absolute rounded-full pointer-events-none"
                     style={{
-                        width: "290px",
-                        height: "290px",
+                        width: "342px",
+                        height: "342px",
                         border: "1px solid rgba(229,9,20,0.06)",
                     }}
                 />
@@ -218,7 +218,7 @@ export const RedOrb = () => {
                 {/* ── Core orb ─────────────────────────────────────────────── */}
                 <motion.div
                     className="relative z-10 flex-shrink-0"
-                    style={{ width: "96px", height: "96px" }}
+                    style={{ width: "113px", height: "113px" }}
                     animate={{ scale: [1, 1.04, 1] }}
                     transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
                 >
@@ -237,12 +237,12 @@ export const RedOrb = () => {
                     <div
                         className="absolute rounded-full"
                         style={{
-                            top: "10px",
-                            left: "14px",
-                            width: "26px",
-                            height: "20px",
+                            top: "12px",
+                            left: "16px",
+                            width: "31px",
+                            height: "24px",
                             background: "rgba(255,255,255,0.22)",
-                            filter: "blur(7px)",
+                            filter: "blur(8px)",
                         }}
                     />
 
@@ -258,14 +258,14 @@ export const RedOrb = () => {
                 <div
                     className="pointer-events-none absolute"
                     style={{
-                        bottom: "48px",
+                        bottom: "56px",
                         left: "50%",
                         transform: "translateX(-50%)",
-                        width: "120px",
-                        height: "16px",
+                        width: "142px",
+                        height: "18px",
                         borderRadius: "50%",
                         background: "rgba(229,9,20,0.18)",
-                        filter: "blur(20px)",
+                        filter: "blur(22px)",
                     }}
                 />
             </motion.div>
