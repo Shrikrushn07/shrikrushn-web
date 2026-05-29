@@ -6,22 +6,24 @@ export const Button = ({
     href,
     to,
     className = "",
-    variant = "primary", // primary, outline, ghost
+    variant = "primary", // primary, outline, ghost, red-ghost
     ...props
 }) => {
     const baseStyles =
-        "inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 active:scale-95";
+        "inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 active:scale-95 cursor-pointer";
 
     const variants = {
         primary:
-            "bg-blue-600 hover:bg-blue-500 text-white shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_25px_rgba(37,99,235,0.45)] border border-transparent",
+            "bg-brand-red hover:bg-brand-red-light text-white shadow-red-glow-sm hover:shadow-red-glow border border-transparent",
         outline:
-            "bg-white/5 hover:bg-white/10 text-blue-200 border border-white/10 hover:border-blue-500/30",
+            "bg-transparent text-white border border-white/15 hover:border-brand-red/50 hover:bg-brand-red/5 hover:text-white",
+        "outline-red":
+            "bg-transparent text-brand-red border border-brand-red/40 hover:border-brand-red hover:bg-brand-red/10",
         ghost:
-            "bg-transparent hover:bg-white/5 text-gray-300 hover:text-white",
+            "bg-transparent hover:bg-white/5 text-[#A1A1AA] hover:text-white border border-transparent",
     };
 
-    const combinedClasses = `${baseStyles} ${variants[variant]} ${className}`;
+    const combinedClasses = `${baseStyles} ${variants[variant] || variants.primary} ${className}`;
 
     if (to) {
         return (

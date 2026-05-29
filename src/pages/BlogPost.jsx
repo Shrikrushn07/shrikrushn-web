@@ -27,7 +27,7 @@ export const BlogPost = () => {
         <article className="px-6 py-20 max-w-3xl mx-auto">
             <Link
                 to="/blog"
-                className="inline-flex items-center gap-2 text-gray-400 hover:text-white mb-10 transition-colors"
+                className="inline-flex items-center gap-2 text-[#A1A1AA] hover:text-white mb-10 transition-colors text-sm font-medium group"
             >
                 <ArrowLeft size={18} /> Back to Blog
             </Link>
@@ -36,7 +36,7 @@ export const BlogPost = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
             >
-                <div className="flex gap-4 items-center text-sm text-gray-400 mb-6">
+                <div className="flex gap-4 items-center text-sm text-[#A1A1AA] mb-6">
                     <span className="flex items-center gap-2">
                         <Calendar size={16} /> {post.date}
                     </span>
@@ -49,7 +49,7 @@ export const BlogPost = () => {
                     {post.title}
                 </h1>
 
-                <div className="prose prose-invert prose-lg max-w-none prose-pre:bg-[#1a1b1e] prose-pre:border prose-pre:border-white/10 prose-headings:text-blue-100">
+                <div className="prose prose-invert prose-lg max-w-none prose-pre:bg-[#1a1b1e] prose-pre:border prose-pre:border-white/10 prose-headings:text-white prose-a:text-brand-red">
                     <ReactMarkdown
                         remarkPlugins={[remarkGfm]}
                         components={{

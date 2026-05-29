@@ -16,20 +16,35 @@ const ScrollToTop = () => {
 
 export const Layout = ({ children }) => {
     return (
-        <div className="min-h-screen bg-[#07080b] text-white font-sans selection:bg-blue-500/30 selection:text-white flex flex-col">
+        <div className="min-h-screen bg-[#050505] text-white font-sans flex flex-col relative overflow-x-hidden">
             <ScrollToTop />
 
-            {/* Background Gradients */}
-            <div className="fixed inset-0 -z-10 pointer-events-none">
-                <div className="absolute inset-0 bg-gradient-to-b from-[#06070a] via-[#090a10] to-[#06070a]" />
-                <div className="absolute left-1/2 top-0 h-[800px] w-[800px] -translate-x-1/2 rounded-full bg-blue-500/10 blur-[150px] opacity-40" />
-                <div className="absolute right-0 bottom-0 h-[600px] w-[600px] bg-indigo-500/5 blur-[120px] opacity-30" />
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.6)_100%)]" />
+            {/* Background — red glow blobs */}
+            <div className="fixed inset-0 -z-10 pointer-events-none overflow-hidden">
+                {/* Base */}
+                <div className="absolute inset-0 bg-[#050505]" />
+                {/* Top red glow */}
+                <div className="absolute -top-40 left-1/2 -translate-x-1/2 h-[600px] w-[700px] rounded-full bg-brand-red/10 blur-[140px] opacity-60" />
+                {/* Bottom right accent */}
+                <div className="absolute bottom-0 right-0 h-[400px] w-[400px] rounded-full bg-brand-red/5 blur-[100px] opacity-40" />
+                {/* Left subtle accent */}
+                <div className="absolute top-1/2 -left-20 h-[300px] w-[300px] rounded-full bg-brand-red/5 blur-[80px] opacity-30" />
+                {/* Noise texture */}
+                <div
+                    className="absolute inset-0 opacity-[0.025]"
+                    style={{
+                        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
+                        backgroundRepeat: "repeat",
+                        backgroundSize: "200px 200px",
+                    }}
+                />
+                {/* Vignette */}
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)]" />
             </div>
 
             <Navbar />
 
-            <main className="flex-grow pt-24">
+            <main className="flex-grow pt-20">
                 {children}
             </main>
 
