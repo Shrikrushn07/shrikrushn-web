@@ -63,13 +63,11 @@ const processPostData = (data) => {
 };
 
 export const getPosts = async () => {
-  console.log("[Blog Loader] Starting safe load...");
 
   // Absolute path glob
   const modules = import.meta.glob("/src/blog/*.md", { query: "?raw", import: "default" });
   const paths = Object.keys(modules);
 
-  console.log(`[Blog Loader] Found ${paths.length} modules`);
   const posts = [];
 
   for (const path in modules) {
@@ -90,7 +88,6 @@ export const getPosts = async () => {
     }
   }
 
-  console.log(`[Blog Loader] Loaded ${posts.length} posts successfully`);
   return posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 };
 

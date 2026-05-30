@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import {
     ArrowRight, Download, Mail, Github, Linkedin, Twitter,
     Rocket, Code2, Trophy, Clock, ExternalLink, Zap, ChevronRight
